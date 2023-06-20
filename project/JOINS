@@ -1,0 +1,59 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE Singers ( id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, genre Text);
+
+INSERT INTO Singers (name,genre) VALUES ("Rihanna", "RnB");
+INSERT INTO Singers (name,genre) VALUES ("Selena", "Pop");
+INSERT INTO Singers (name,genre) VALUES ("Beyonce", "Pop");
+INSERT INTO Singers (name,genre) VALUES ("Taylor", "Country");
+INSERT INTO Singers (name,genre) VALUES ("Jennifer", "latin");
+
+CREATE TABLE Movies ( id INTEGER PRIMARY KEY AUTOINCREMENT, singer_id INTEGER, title TEXT); 
+
+INSERT INTO movies (singer_id,title) VALUES 
+(1, "Twilight");
+INSERT INTO movies (singer_id,title) VALUES 
+(1, "Little_Mermaid");
+INSERT INTO movies (singer_id,title) VALUES 
+(2, "Harry Potter");
+INSERT INTO movies (singer_id,title) VALUES 
+(2, "Avengers");
+INSERT INTO movies (singer_id,title) VALUES 
+(2, "Spider_Man");
+INSERT INTO movies (singer_id,title) VALUES 
+(3, "Iron Man");
+INSERT INTO movies (singer_id,title) VALUES 
+(3, "Cinderella");
+INSERT INTO movies (singer_id,title) VALUES 
+(4, "Dori");
+INSERT INTO movies (singer_id,title) VALUES 
+(4, "Transformers");
+INSERT INTO movies (singer_id,title) VALUES 
+(5, "Matilda");
+INSERT INTO movies (singer_id,title) VALUES 
+(5, "Finding_Nemo");
+INSERT INTO movies (singer_id,title) VALUES 
+(4, "Toystory");
+INSERT INTO movies (singer_id,title) VALUES 
+(4, "Barbie");
+INSERT INTO movies (singer_id,title) VALUES 
+(5, "Avatar");
+INSERT INTO movies (singer_id,title) VALUES 
+(1, "Dear_John");
+
+SELECT s.name, m.title
+
+FROM singers s
+
+JOIN movies m
+
+ON s.id=m.singer_id;
+
+
+SELECT s.name, s.genre, m.title
+
+FROM singers s
+
+LEFT OUTER JOIN movies m
+
+ON s.id=m.singer_id;
